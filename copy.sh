@@ -450,6 +450,7 @@ DIR="
   swappy
   wallust
   wlogout
+  zsh
 "
 
 for DIR_NAME in $DIR; do
