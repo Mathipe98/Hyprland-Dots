@@ -29,7 +29,6 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTCONTROL=ignoreboth
 setopt appendhistory
-setopt checkwinsize
 
 # ---- Oh My Posh ----
 
