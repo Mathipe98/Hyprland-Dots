@@ -98,7 +98,7 @@ export BAT_THEME=tokyonight_night
 
 # ---- Eza (better ls) -----
 
-alias ls="eza --icons=always --color=always --long --git --no-filesize --no-time --no-user --no-permissions"
+alias ls="eza --icons=always --color=always --git --no-filesize --no-time --no-user --no-permissions"
 
 
 alias nix_list_gen="sudo nix-env --list-generations -p /nix/var/nix/profiles/system"
