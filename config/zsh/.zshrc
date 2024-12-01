@@ -102,4 +102,4 @@ alias ls="eza --icons=always --color=always --git --no-filesize --no-time --no-u
 
 
 alias nix_list_gen="sudo nix-env --list-generations -p /nix/var/nix/profiles/system"
-alias nix_del_old="sudo nix-env --delete-generations -p /nix/var/nix/profiles/system"
+alias nix_del_old="sudo nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo nix-env --delete-generations -p /nix/var/nix/profiles/system"
