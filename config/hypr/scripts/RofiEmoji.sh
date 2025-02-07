@@ -4946,4 +4946,4 @@ exit
 🏴󠁧󠁢󠁥󠁮󠁧󠁿	subdivision-flag	England	flag | flag: England
 🏴󠁧󠁢󠁳󠁣󠁴󠁿	subdivision-flag	Scotland	flag | flag: Scotland
 🏴󠁧󠁢󠁷󠁬󠁳󠁿	subdivision-flag	Wales	flag | flag: Wales
-
+¯\_(ツ)_/¯	face	shrug | dong | shrugging ascii
