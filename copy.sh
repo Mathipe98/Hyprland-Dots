@@ -904,6 +904,39 @@ if [ -d "$sddm_sequioa" ]; then
   done
 fi
 
+while true; do
+  read -rp "${CAT} Would you like to download and setup nvim configuration? (y/n)" RESPONSE
+  case $RESPONSE in
+  [Yy])
+    echo "${NOTE} Downloading nvim configuration..."
+    if git clone "https://github.com/Mathipe98/nvim.git"; then
+      echo "${OK} nvim configuration downloaded successfully." 2>&1 | tee -a "$LOG"
+      # Check if nvim directory exists and create it if not
+      if [ ! -d ~/.config/nvim ]; then
+        mkdir -p ~/.config/nvim
+        echo "${OK} Created nvim directory." 2>&1 | tee -a "$LOG"
+      fi
+      if cp -R nvim/* ~/.config/nvim/ >>"$LOG" 2>&1; then
+        echo "${OK} nvim configuration copied successfully." 2>&1 | tee -a "$LOG"
+        rm -rf nvim 2>&1 # Remove cloned repository after copying nvim configuration
+        break
+      else
+        echo "${ERROR} Copying nvim configuration failed" 2>&1 | tee -a "$LOG"
+      fi
+    else
+      echo "${ERROR} Downloading nvim configuration failed" 2>&1 | tee -a "$LOG"
+    fi
+    ;;
+  [Nn])
+    echo "${NOTE} You chose not to download nvim configuration." 2>&1 | tee -a "$LOG"
+    break
+    ;;
+  *)
+    echo "Please enter 'y' or 'n' to proceed."
+    ;;
+  esac
+done
+
 # additional wallpapers
 printf "\n%.0s" {1..1}
 echo "${MAGENTA}By default only a few wallpapers are copied${RESET}..."
